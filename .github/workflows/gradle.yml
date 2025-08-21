@@ -36,12 +36,11 @@ jobs:
     - name: Build with Gradle
       run: ./gradlew build
 
-    # ✅ Add these two steps AFTER build
     - name: Run tests
       run: ./gradlew test
 
     - name: Upload JAR artifact
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: gradle-build
         path: app/build/libs/*.jar
